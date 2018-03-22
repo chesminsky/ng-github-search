@@ -7,7 +7,7 @@ export class UsersService {
 
 	constructor(private http: HttpClient) { }
 
-	getOrgUnits(filter: IUsersSearchFilter, limit?: number): Observable<IUsersSearchResults> {
+	get(filter: IUsersSearchFilter, limit?: number): Observable<IUsersSearchResults> {
 
 		const url = `https://api.github.com/search/users?q=${filter.name}+repos:>${filter.repos}+followers:>${filter.followers}`;
 
