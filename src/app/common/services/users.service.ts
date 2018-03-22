@@ -11,7 +11,7 @@ export class UsersService {
 
 		const url = `https://api.github.com/search/users?q=${filter.name}+repos:>${filter.repos}+followers:>${filter.followers}`;
 
-		return this.http.get<IUsersSearchResults>('/equip-orgs/rest/org-units/actions/search');
+		return this.http.get<IUsersSearchResults>(url);
 	}
 
 }
