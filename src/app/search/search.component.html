@@ -1,5 +1,22 @@
-<form class="example-form">
-	<mat-form-field class="example-full-width">
-		<input matInput placeholder="User name" (keyup)="searchTerm$.next($event.target.value)">
-	</mat-form-field>
-</form>
+<mat-card class="example-card">
+
+	<mat-card-header>
+		<mat-card-title>Githbub users search</mat-card-title>
+	</mat-card-header>
+
+	<mat-card-content>
+
+		<div class="grid">
+			<div class="grid__item">
+
+				<form class="example-form">
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="User name" (keyup)="searchTerm$.next($event.target.value)">
+					</mat-form-field>
+				</form>
+
+			</div>
+		</div>
+
+	</mat-card-content>
+</mat-card>

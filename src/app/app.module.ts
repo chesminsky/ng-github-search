@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { UsersService } from './common/services/users.service';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		SearchComponent
+		SearchComponent,
+		UserComponent
 	],
 	imports: [
 		BrowserModule,
