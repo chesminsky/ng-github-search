@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { UsersService } from './common/services/users.service';
 import { UserCardComponent } from './user-card/user-card.component';
+import { BASE_URL, BASE_URL_TOKEN } from './config';
 
 
 @NgModule({
@@ -34,7 +35,12 @@ import { UserCardComponent } from './user-card/user-card.component';
 		MatSliderModule
 	],
 	providers: [
-		UsersService
+		UsersService,
+		{
+			provide: BASE_URL_TOKEN,
+			useValue: BASE_URL,
+			multi: true
+		}
 	],
 	bootstrap: [
 		AppComponent
