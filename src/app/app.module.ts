@@ -14,14 +14,14 @@ import 'rxjs/add/operator/switchMap';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { UsersService } from './common/services/users.service';
-import { UserComponent } from './user/user.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		SearchComponent,
-		UserComponent
+		UserCardComponent
 	],
 	imports: [
 		BrowserModule,

@@ -1,0 +1,12 @@
+<mat-card class="mb-20">
+	<mat-card-header>
+		<mat-card-title>{{model.login}}</mat-card-title>
+	</mat-card-header>
+	<img mat-card-image [src]="model.avatar_url">
+	<mat-card-content>
+		<p>
+			Profile:
+			<a [href]="model.html_url" target="blank_">{{model.html_url}}</a>
+		</p>
+	</mat-card-content>
+</mat-card>
