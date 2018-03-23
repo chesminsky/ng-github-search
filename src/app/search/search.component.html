@@ -11,7 +11,7 @@
 
 				<form class="example-form">
 					<mat-form-field class="example-full-width">
-						<input matInput placeholder="User name" (keyup)="searchTerm$.next($event.target.value)">
+						<input #name matInput placeholder="User name" (keyup)="onNameChange(name.value)" [value]="filter.name">
 					</mat-form-field>
 				</form>
 

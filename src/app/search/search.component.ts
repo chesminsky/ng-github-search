@@ -12,19 +12,36 @@ import { UsersService } from '../common/services/users.service';
 })
 export class SearchComponent implements OnInit {
 
-	public searchTerm$ = new Subject<string>();
+	public filter: IUsersSearchFilter;
+	private filter$ = new Subject<IUsersSearchFilter>();
 
 	@Output() dataLoaded = new EventEmitter<Array<IUser>>();
 
 	constructor(
 		private usersService: UsersService
-	) { }
+	) {
+		// initial filter
+		this.filter = {
+			name: 'John Resig',
+			followers: 40,
+			repos: 40
+		};
+	}
 
 	ngOnInit() {
 
-		this.usersService.searchUsers(this.searchTerm$).subscribe((results: IUsersSearchResults) => {
+		this.usersService.searchUsers(this.filter$).subscribe((results: IUsersSearchResults) => {
 			this.dataLoaded.emit(results.items);
 		});
+
+		this.filter$.next(this.filter);
+	}
+
+	onNameChange(value) {
+
+		Object.assign(this.filter, { name: value });
+
+		this.filter$.next({...this.filter});
 	}
 
 
