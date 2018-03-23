@@ -6,17 +6,26 @@
 
 	<mat-card-content>
 
-		<div class="grid">
-			<div class="grid__item">
+		<form>
+			<div class="grid">
 
-				<form class="example-form">
+				<div class="grid__item">
 					<mat-form-field class="example-full-width">
-						<input #name matInput placeholder="User name" (keyup)="onNameChange(name.value)" [value]="filter.name">
+						<input #name matInput placeholder="User name" (keyup)="onParamChange('name', name.value)" [value]="filter.name">
 					</mat-form-field>
-				</form>
+				</div>
 
+				<div class="grid__item">
+					<span class="label">Repos: </span>
+					<mat-slider #repos min="0" max="100" step="1" [value]="filter.repos" thumb-label="true" (change)="onParamChange('repos', repos.value)"></mat-slider>
+				</div>
+
+				<div class="grid__item">
+					<span class="label">Followers: </span>
+					<mat-slider #followers min="0" max="1000" step="1" [value]="filter.followers" thumb-label="true" (change)="onParamChange('followers', followers.value)"></mat-slider>
+				</div>
 			</div>
-		</div>
+		</form>
 
 	</mat-card-content>
 </mat-card>

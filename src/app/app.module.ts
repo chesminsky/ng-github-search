@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSliderModule } from '@angular/material/slider';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
@@ -24,12 +25,13 @@ import { UserCardComponent } from './user-card/user-card.component';
 		UserCardComponent
 	],
 	imports: [
+		HttpClientModule,
 		BrowserModule,
+		BrowserAnimationsModule,
 		MatCardModule,
 		MatFormFieldModule,
 		MatInputModule,
-		BrowserAnimationsModule,
-		HttpClientModule
+		MatSliderModule
 	],
 	providers: [
 		UsersService

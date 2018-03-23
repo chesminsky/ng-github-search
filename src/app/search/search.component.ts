@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
 		// initial filter
 		this.filter = {
 			name: 'John Resig',
-			followers: 40,
+			followers: 500,
 			repos: 40
 		};
 	}
@@ -37,12 +37,13 @@ export class SearchComponent implements OnInit {
 		this.filter$.next(this.filter);
 	}
 
-	onNameChange(value) {
+	onParamChange(key: string, value: string | number) {
 
-		Object.assign(this.filter, { name: value });
+		this.filter[key] = value;
 
 		this.filter$.next({...this.filter});
 	}
+
 
 
 }
