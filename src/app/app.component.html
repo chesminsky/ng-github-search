@@ -1,11 +1,11 @@
 <div class="container">
 
-	<app-search></app-search>
+	<app-search (dataLoaded)="users = $event;"></app-search>
 
 
 	<div class="grid mt-20">
 
-		<div class="grid__item">
+		<div class="grid__item" *ngFor="let user of users">
 
 			<app-user></app-user>
 

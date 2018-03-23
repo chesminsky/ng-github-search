@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -14,6 +14,8 @@ export class SearchComponent implements OnInit {
 
 	public searchTerm$ = new Subject<string>();
 
+	@Output() dataLoaded = new EventEmitter<Array<IUser>>();
+
 	constructor(
 		private usersService: UsersService
 	) { }
@@ -21,7 +23,7 @@ export class SearchComponent implements OnInit {
 	ngOnInit() {
 
 		this.usersService.searchUsers(this.searchTerm$).subscribe((results: IUsersSearchResults) => {
-			console.log(results);
+			this.dataLoaded.emit(results.items);
 		});
 	}
 
